@@ -1,5 +1,6 @@
 .journal-item__body {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
@@ -27,4 +28,7 @@
   font-weight: 400;
   line-height: normal;
   overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  flex: 1;
 }

@@ -2,6 +2,9 @@ import './Header.css';
 
 export const Header = () => {
 	return (
-		<>Logo</>
+		<>
+			{/* <img className='logo' alt="logo" src="/logo.svg"/> */}
+			<div>Journal Memory</div>
+		</>
 	);
 };

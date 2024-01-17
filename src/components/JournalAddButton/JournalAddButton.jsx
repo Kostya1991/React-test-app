@@ -5,6 +5,7 @@ export const JournalAddButton = () => {
 
 	return (
 		<CardButton className="journal-add">
+			<img className='journal-add__icon' src="/add.svg" alt="add" />
       Новое воспоминание
 		</CardButton>
 	);
