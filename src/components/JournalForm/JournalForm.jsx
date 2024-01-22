@@ -47,15 +47,42 @@ export const JournalForm = ({ onSubmit }) => {
 
 	return (
 		<form className={styles['journal-form']} onSubmit={submitForm}>
-			<input type="text" name='title' className={classNames(
+			<div>
+				<input type="text" name='title' className={classNames(
+					styles['input-title'],
+					{
+						[styles['invalid']]: !formValid.title
+					}
+				)}/>
+			</div>
+
+			<div className={styles['form-row']}>
+				<label htmlFor="date" className={styles['form-label']}>
+					<img src="/calendar.svg" alt="Календарь"/>
+					<span>Дата</span>
+				</label>
+				<input type="date" name='date' id='date' className={classNames(
+						styles['input'],
+						{
+							[styles['invalid']]: !formValid.date
+						}
+				)}/>
+			</div>
+
+			<div className={styles['form-row']}>
+				<label htmlFor="tag" className={styles['form-label']}>
+					<img src="/folder.svg" alt="Календарь"/>
+					<span>Метки</span>
+				</label>
+				<input type="text" id='tag' name='tag' className={`${styles['input']}`}/>
+			</div>
+
+			<textarea name="post" id="" cols="30" rows="10" className={classNames(
 				styles['input'],
 				{
-					[styles['invalid']]: !formValid.title
+					[styles['invalid']]: !formValid.post
 				}
-			)}/>
-			<input type="date" name='date' className={`${styles['input']} ${!formValid.date && styles['invalid']}`}/>
-			<input type="text" name='tag'/>
-			<textarea name="post" id="" cols="30" rows="10" className={`${styles['input']} ${!formValid.post && styles['invalid']}`}></textarea>
+			)}></textarea>
 
 			<Button text="Сохранить"/>
 		</form>
