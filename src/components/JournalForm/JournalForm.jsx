@@ -46,10 +46,10 @@ export const JournalForm = ({ onSubmit }) => {
 
 	return (
 		<form className='journal-form' onSubmit={submitForm}>
-			<input type="text" name='title' style={{ border: formValid.title ? undefined : '1px solid red' }}/>
-			<input type="date" name='date' style={{ border: formValid.date ? undefined : '1px solid red' }}/>
+			<input type="text" name='title' className={`input ${!formValid.title && 'invalid'}`}/>
+			<input type="date" name='date' className={`input ${!formValid.date && 'invalid'}`}/>
 			<input type="text" name='tag'/>
-			<textarea name="post" id="" cols="30" rows="10" style={{ border: formValid.post ? undefined : '1px solid red' }}></textarea>
+			<textarea name="post" id="" cols="30" rows="10" className={`input ${!formValid.post && 'invalid'}`}></textarea>
 
 			<Button text="Сохранить"/>
 		</form>
